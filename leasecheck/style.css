@@ -1,0 +1,62 @@
+:root{
+  --paper:#fff; --ink:#17222d; --muted:#566474; --rule:#d5dce4;
+  --red:#c62f2f; --red-tint:#fbd9d5;
+  --amber:#8a5a00; --amber-tint:#ffeeb0;
+  --blue:#2f5fa7; --blue-tint:#dce8fa;
+  --ok:#0f6b4f;
+  --doc:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+}
+.sev-high{--pen:var(--red);--tint:var(--red-tint)}
+.sev-medium{--pen:var(--amber);--tint:var(--amber-tint)}
+.sev-low{--pen:var(--blue);--tint:var(--blue-tint)}
+
+[data-testid="stMainBlockContainer"],.block-container{max-width:1280px;padding-top:2.2rem}
+header[data-testid="stHeader"]{background:transparent}
+footer{visibility:hidden}
+
+.lc-hero h1{font-family:var(--doc);font-weight:700;font-size:2.5rem;line-height:1.1;
+  letter-spacing:-.01em;margin:0 0 .45rem!important;padding:0!important}
+.lc-hero p{color:var(--muted);max-width:48ch;margin:0;font-size:1.03rem;line-height:1.5}
+.lc-h{font-family:var(--doc);font-size:1.2rem;font-weight:700;margin:0 0 .5rem!important;padding:0!important}
+
+.lc-status{display:flex;gap:.65rem;align-items:flex-start;padding:.6rem .8rem;
+  background:var(--paper);border:1px solid var(--rule);border-radius:8px;
+  font-size:.85rem;line-height:1.4;margin-bottom:.5rem}
+.lc-dot{flex:none;width:.6rem;height:.6rem;border-radius:50%;margin-top:.35rem;background:#d99a00}
+.lc-status.ok .lc-dot{background:var(--ok)}
+.lc-status.warn{border-color:#e0b34a}
+
+[data-testid="stTextArea"] textarea{font-family:var(--doc);font-size:.98rem;line-height:1.55;
+  background:var(--paper);border-radius:4px}
+[data-testid="stButton"] button{border-radius:6px;font-weight:600}
+
+.lc-summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;margin:0 0 1rem}
+.lc-lead{font-family:var(--doc);font-size:1.3rem;font-weight:700}
+.lc-count{font-size:.9rem;padding:.15rem .55rem;border-radius:3px;background:var(--tint)}
+
+.lc-paper{background:var(--paper);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:0 1px 0 var(--rule),0 14px 30px -20px rgba(23,34,45,.4);padding:.6rem 1.5rem}
+.lc-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.8rem;
+  padding:1rem 0;border-bottom:1px solid var(--rule)}
+.lc-row:last-child{border-bottom:0}
+.lc-clause{font-family:var(--doc);font-size:1.04rem;line-height:1.7;color:var(--ink);margin:0!important}
+.lc-mark{background:var(--tint);padding:.12em .2em;border-radius:2px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+.lc-note{border-left:3px solid var(--pen);padding:.1rem 0 .1rem .85rem;margin-bottom:.9rem;
+  font-size:.9rem;line-height:1.5;color:var(--ink)}
+.lc-note:last-child{margin-bottom:0}
+.lc-note h4{font-size:.97rem;font-weight:700;margin:0 0 .2rem!important;padding:0!important}
+.lc-note p{margin:0 0 .35rem!important}
+.lc-tag{font-size:.82rem;font-weight:700;color:var(--pen);margin-bottom:.1rem}
+.lc-fine{color:var(--muted);font-size:.78rem;line-height:1.45}
+.lc-fine a{color:var(--muted)}
+.lc-hint{color:var(--muted);font-size:.9rem;margin:0 0 .6rem!important}
+
+.lc-questions{font-family:var(--doc);font-size:1.03rem;line-height:1.65;
+  padding-left:1.4rem;margin:.2rem 0 1rem}
+
+@media (max-width:760px){
+  .lc-row{grid-template-columns:1fr;gap:.7rem}
+  .lc-hero h1{font-size:2rem}
+}

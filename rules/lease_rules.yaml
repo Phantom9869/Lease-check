@@ -1,0 +1,109 @@
+# Region-neutral starter rules. `source` is TODO on purpose: verify each rule
+# against your region's official tenant-rights pages, then add the link and
+# fill `localize` with the regional number (deposit cap, notice period, etc).
+version: 1
+rules:
+  - id: entry_without_notice
+    title: Landlord entry with little or no notice
+    severity: high
+    patterns:
+      - 'enter\b.{0,80}\b(at any time|without (prior |advance )?notice)'
+      - 'without (prior |advance )?(notice|consent).{0,60}\benter'
+    why: The landlord may be able to come in without warning.
+    ask: Can entry require at least 24-48 hours notice except in emergencies?
+    localize: Check the minimum entry-notice period in your region.
+
+  - id: auto_renewal
+    title: Automatic renewal
+    severity: medium
+    patterns:
+      - 'automatically\s+renew'
+      - 'auto-?renew'
+    why: If you miss the notice window, you may be locked in for another term.
+    ask: How far ahead must I give notice, and can renewal go month-to-month?
+    localize: Check whether your region limits automatic renewals.
+
+  - id: early_termination_fee
+    title: Early termination fee
+    severity: high
+    patterns:
+      - 'early\s+termination'
+      - 'terminat\w+.{0,60}(fee|penalty|liquidated)'
+    why: Leaving early may cost a large fixed amount.
+    ask: Is the fee capped, and is it reduced if the landlord re-lets the unit?
+    localize: Check whether your region requires landlords to re-let or limits fees.
+
+  - id: nonrefundable_fees
+    title: Non-refundable fees
+    severity: medium
+    patterns:
+      - 'non-?\s?refundable'
+    why: Money labelled non-refundable may not come back even if you leave the place spotless.
+    ask: What exactly is this fee for, and is it legal as a separate charge?
+    localize: Check whether non-refundable deposits or fees are restricted.
+
+  - id: deposit_deductions
+    title: Deposit deductions or forfeiture
+    severity: high
+    patterns:
+      - 'deposit.{0,80}(deduct|forfeit|retain)'
+      - 'forfeit'
+    why: Broad wording can let the landlord keep your deposit for ordinary wear and tear.
+    ask: Can deductions be limited to damage beyond normal wear, with an itemized list?
+    localize: Check your region's deposit cap and return deadline.
+
+  - id: tenant_pays_all_repairs
+    title: Tenant responsible for all repairs
+    severity: high
+    patterns:
+      - 'tenant.{0,60}(responsible|shall|must|agrees).{0,60}\b(all|any)\b.{0,30}(repairs|maintenance)'
+    why: Major repairs are often the landlord's duty, so blanket wording is worth questioning.
+    ask: Can this be limited to damage I cause, with the landlord covering structure and systems?
+    localize: Check landlord repair duties (habitability) in your region.
+
+  - id: liability_waiver
+    title: Landlord liability waiver or indemnity
+    severity: high
+    patterns:
+      - '(landlord|lessor).{0,80}(not\s+(be\s+)?(liable|responsible)|hold\s+harmless)'
+      - 'indemnif'
+    why: You may be agreeing to give up claims even when the landlord is at fault.
+    ask: Can this exclude the landlord's own negligence?
+    localize: Check whether such waivers are enforceable in your region.
+
+  - id: unilateral_rent_change
+    title: Rent can change at the landlord's discretion
+    severity: high
+    patterns:
+      - '(adjust|increase|change).{0,40}rent.{0,80}(any time|sole discretion|upon notice)'
+      - 'rent.{0,60}(adjust|increase|change).{0,60}(any time|sole discretion)'
+    why: The price you agreed to may not stay fixed during the term.
+    ask: Can rent be fixed for the term, with any increase only at renewal and with notice?
+    localize: Check rent-increase notice rules and caps.
+
+  - id: late_fees
+    title: Late fee
+    severity: medium
+    patterns:
+      - 'late\s+(fee|charge)'
+    why: Percentage-based late fees can add up quickly.
+    ask: Is there a grace period, and is the fee a flat, capped amount?
+    localize: Check maximum late fees and required grace periods.
+
+  - id: joint_several
+    title: Joint and several liability
+    severity: medium
+    patterns:
+      - 'jointly\s+and\s+severally'
+    why: Each tenant can be held responsible for the whole rent if a roommate does not pay.
+    ask: Can liability be limited to my share?
+    localize: ""
+
+  - id: sublet_ban
+    title: Subletting or assignment restriction
+    severity: low
+    patterns:
+      - '(sublet|sublease|assign)\w*'
+    why: This limits your options if your plans change mid-lease.
+    ask: Can subletting be allowed with the landlord's reasonable consent?
+    localize: Check whether your region requires reasonable consent to sublet.
