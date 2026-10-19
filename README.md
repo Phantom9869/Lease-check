@@ -73,7 +73,7 @@ Serves doctored repositories from a local malicious mirror and prints the client
 
 ## Credits
 
-Built with AI assistance (Claude). Uses [python-tuf](https://github.com/theupdateframework/python-tuf), [Streamlit](https://streamlit.io), [Ollama](https://ollama.com), Google's Gemma, and PyYAML.
+Built with AI assistance . Uses [python-tuf](https://github.com/theupdateframework/python-tuf), [Streamlit](https://streamlit.io), [Ollama](https://ollama.com), Google's Gemma, and PyYAML.
 
 ## License
 
