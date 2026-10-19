@@ -143,7 +143,7 @@ else:
         st.rerun()
     clauses, flags = result["clauses"], result["flags"]
     questions = top_questions(flags)
-    t1, t2, _ = st.columns([1, 1, 6], vertical_alignment="center")
+    t1, t2, _ = st.columns([1, 1.3, 8], vertical_alignment="center")
     t1.button("← Edit lease", key="back", type="tertiary", on_click=lambda: st.session_state.update(view="input"))
     t2.download_button("Download notes", notes_markdown(clauses, flags, questions), "lease-notes.md", "text/markdown", key="dl")
     if result["model"] != "ready" and st.session_state.get("use_model", True):
