@@ -7,7 +7,7 @@ Paste the lease text. LeaseCheck shows it back as a marked-up page: clauses wort
 Everything runs on your own computer. The lease is never uploaded, and the analysis works with Wi-Fi off.
 
 Built for the Hacktoberfest Open-Source AI Challenge, Week 2: Side Hustle (October 12-18, 2026).
-Write-up and demo: <!-- add the DEV post link here after publishing -->
+Write-up and demo: https://dev.to/bladeharper_ec7070d6e28be/leasecheck-a-lease-reader-that-runs-on-your-laptop-with-rule-updates-you-can-verify-jlg
 
 ## How it works
 
